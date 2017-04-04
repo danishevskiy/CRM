@@ -7,7 +7,6 @@ import org.joda.time.LocalDate;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public class AppMain {
@@ -22,46 +21,58 @@ public class AppMain {
 		 */
 		User employee1 = new User();
 		employee1.setName("Han Yenn");
+		employee1.setSurname("val");
+		employee1.setEmail("dan@i.dws");
+		employee1.setPhone("38067676767");
+		employee1.setPosition("Manager");
+		employee1.setPassword("1");
 		employee1.setJoiningDate(new LocalDate(2010, 10, 10));
-		employee1.setSalary(new BigDecimal(10000));
-		employee1.setSsn("ssn00000001");
+
+
+		service.saveUser(employee1);
+		System.out.println(employee1.toString());
+
+
 
 		/*
 		 * Create Employee2
 		 */
-		User employee2 = new User();
-		employee2.setName("Dan Thomas");
-		employee2.setJoiningDate(new LocalDate(2012, 11, 11));
-		employee2.setSalary(new BigDecimal(20000));
-		employee2.setSsn("ssn00000002");
+		/*User employee2 = new User();
+		employee2.setName("Han Yenn");
+		employee2.setJoiningDate(new LocalDate(2010, 10, 10));
+		employee2.setEmail("dan@i.d");
+		employee2.setPosition("Manager");
+		employee2.setSurname("valt");
+		employee2.setPassword("2");
+		employee2.setPhone("38067676777");*/
 
 		/*
 		 * Persist both Employees
 		 */
-		service.saveUser(employee1);
-		service.saveUser(employee2);
+
+		//service.saveUser(employee2);
 
 		/*
 		 * Get all employees list from database
 		 */
-		List<User> employees = service.findAllUsers();
+		/*List<User> employees = service.findAllUsers();
 		for (User emp : employees) {
 			System.out.println(emp);
-		}
+		}*/
 
 		/*
 		 * delete an employee
 		 */
-		service.deleteUserBySsn("ssn00000002");
+		//service.deleteUserByName("Han Yenn");
 
 		/*
 		 * update an employee
 		 */
 
-		User employee = service.findBySsn("ssn00000001");
-		employee.setSalary(new BigDecimal(50000));
+		/*User employee = service.findByName("Han Yenn");
+		employee.setPosition("director");
 		service.updateUser(employee);
-
+*/
 		/*
 		 * Get all employees list from database
 		 */

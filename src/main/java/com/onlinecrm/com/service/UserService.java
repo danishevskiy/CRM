@@ -10,9 +10,9 @@ public interface UserService {
 
 	List<User> findAllUsers();
 
-	void deleteUserBySsn(String ssn);
+	void deleteUserByName(String name);
 
-	User findBySsn(String ssn);
+	User findByName(String name);
 
 	void updateUser(User user);
 }

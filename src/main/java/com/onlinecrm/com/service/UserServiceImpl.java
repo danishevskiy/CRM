@@ -23,12 +23,12 @@ public class UserServiceImpl implements UserService{
 		return dao.findAllUsers();
 	}
 
-	public void deleteUserBySsn(String ssn) {
-		dao.deleteUserBySsn(ssn);
+	public void deleteUserByName(String name) {
+		dao.deleteUserByName(name);
 	}
 
-	public User findBySsn(String ssn) {
-		return dao.findBySsn(ssn);
+	public User findByName(String name) {
+		return dao.findByName(name);
 	}
 
 	public void updateUser(User user){

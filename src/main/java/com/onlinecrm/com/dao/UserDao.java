@@ -10,9 +10,9 @@ public interface UserDao {
 	
 	List<User> findAllUsers();
 	
-	void deleteUserBySsn(String ssn);
+	void deleteUserByName(String user);
 	
-	User findBySsn(String ssn);
+	User findByName(String user);
 	
 	void updateUser(User user);
 }
