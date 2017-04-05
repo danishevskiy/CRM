@@ -14,37 +14,61 @@ public class AppMain {
 	public static void main(String args[]) {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		UserService service = (UserService) context.getBean("userService");
+		UserService userService = (UserService) context.getBean("userService");
+
+		//AddressService addressService = (AddressService) context.getBean("addressService");
+
+		//CompanyService companyService = (CompanyService) context.getBean("companyService");
 
 		/*
-		 * Create Employee1
+		 * Create User1
 		 */
-		User employee1 = new User();
-		employee1.setName("Han Yenn");
-		employee1.setSurname("val");
-		employee1.setEmail("dan@i.dws");
-		employee1.setPhone("38067676767");
-		employee1.setPosition("Manager");
-		employee1.setPassword("1");
-		employee1.setJoiningDate(new LocalDate(2010, 10, 10));
+		User user1 = new User();
+		user1.setName("admin");
+		user1.setSurname("admin");
+		user1.setEmail("admin@i.dws");
+		user1.setPhone("38067676767");
+		user1.setPosition("Manager");
+		user1.setPassword("admin");
+		user1.setJoiningDate(new LocalDate(2010, 10, 10));
 
-
-		service.saveUser(employee1);
-		System.out.println(employee1.toString());
-
-
+		userService.saveUser(user1);
+		System.out.println(user1.toString());
 
 		/*
-		 * Create Employee2
+		 * Create Address1
 		 */
-		/*User employee2 = new User();
-		employee2.setName("Han Yenn");
-		employee2.setJoiningDate(new LocalDate(2010, 10, 10));
-		employee2.setEmail("dan@i.d");
-		employee2.setPosition("Manager");
-		employee2.setSurname("valt");
-		employee2.setPassword("2");
-		employee2.setPhone("38067676777");*/
+		/*Address address1 = new Address();
+
+		address1.setCity("Kiev");
+		address1.setCountry("Ukraine");
+		address1.setStreet("Peremogu aveny");
+		address1.setNumber("4");
+		address1.setZipCode("20200");
+
+		addressService.saveAddress(address1);
+		System.out.println(address1.toString());
+
+		Company company1 = new Company();
+		company1.setName("KIEP");
+		company1.setJoiningDate(new LocalDate(2000,10,10));
+		company1.setNameChief("Iurii");
+		company1.setSurnameChief("Malahov");
+		company1.setAddress(address1);
+		company1.setPassword("1111");
+		company1.setTIN("12345678912345");
+
+		companyService.saveCompany(company1);
+		System.out.println(company1.toString());
+
+
+
+
+
+
+
+
+
 
 		/*
 		 * Persist both Employees
@@ -76,7 +100,7 @@ public class AppMain {
 		/*
 		 * Get all employees list from database
 		 */
-		List<User> employeeList = service.findAllUsers();
+		List<User> employeeList = userService.findAllUsers();
 		for (User emp : employeeList) {
 			System.out.println(emp);
 		}

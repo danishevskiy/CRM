@@ -1,5 +1,7 @@
-package com.onlinecrm.com.dao;
+package com.onlinecrm.com.dao.daoImpl;
 
+import com.onlinecrm.com.dao.AbstractDao;
+import com.onlinecrm.com.dao.UserDao;
 import com.onlinecrm.com.model.User;
 
 import org.hibernate.Criteria;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository("userDao")
-public class UserDaoImpl extends AbstractDao implements UserDao{
+public class UserDaoImpl extends AbstractDao implements UserDao {
 
 	public void saveUser(User user) {
 		persist(user);
