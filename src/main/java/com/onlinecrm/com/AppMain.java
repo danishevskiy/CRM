@@ -1,7 +1,11 @@
 package com.onlinecrm.com;
 
 import com.onlinecrm.com.configuration.AppConfig;
+import com.onlinecrm.com.model.Address;
+import com.onlinecrm.com.model.Company;
 import com.onlinecrm.com.model.User;
+import com.onlinecrm.com.service.AddressService;
+import com.onlinecrm.com.service.CompanyService;
 import com.onlinecrm.com.service.UserService;
 import org.joda.time.LocalDate;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -16,9 +20,9 @@ public class AppMain {
 
 		UserService userService = (UserService) context.getBean("userService");
 
-		//AddressService addressService = (AddressService) context.getBean("addressService");
+		AddressService addressService = (AddressService) context.getBean("addressService");
 
-		//CompanyService companyService = (CompanyService) context.getBean("companyService");
+		CompanyService companyService = (CompanyService) context.getBean("companyService");
 
 		/*
 		 * Create User1
@@ -38,7 +42,7 @@ public class AppMain {
 		/*
 		 * Create Address1
 		 */
-		/*Address address1 = new Address();
+		Address address1 = new Address();
 
 		address1.setCity("Kiev");
 		address1.setCountry("Ukraine");

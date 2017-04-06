@@ -6,10 +6,11 @@ import com.onlinecrm.com.model.Company;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-//@Repository("companyDao")
+@Repository("companyDao")
 public class CompanyDaoImpl extends AbstractDao implements CompanyDao {
 
 	public void saveCompany(Company company) {

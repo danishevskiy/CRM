@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name="Address")
 public class Address {
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "Company")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "address")
     Company company;
 
     @Id

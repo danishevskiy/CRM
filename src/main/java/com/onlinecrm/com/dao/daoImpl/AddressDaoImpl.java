@@ -6,10 +6,11 @@ import com.onlinecrm.com.model.Address;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-//@Repository("addressDao")
+@Repository("addressDao")
 public class AddressDaoImpl extends AbstractDao implements AddressDao {
 
 	public void saveAddress(Address address) {
